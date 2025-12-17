@@ -176,6 +176,9 @@ Ensure the final output file contains variants with predictions:
 results/SRR31139166/Predictions/SRR31139166.annotated_predictions.csv
 ```
 
+## Training custom models
+If you want to generate training data for new models specialized for a specific dataset (e.g., tumor type or protocol), please visit [VarRNA-training](https://github.com/nch-cloud/VarRNA-training) for code and analysis documentation. 
+
 ## Citation
 If you use VarRNA in your research, please consider citing our paper: 
 https://www.nature.com/articles/s43856-025-00901-y
