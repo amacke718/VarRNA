@@ -2,11 +2,15 @@ import os
 
 configfile: "../config/config.yaml"
 
-micromamba_path = os.path.expandvars(config["micromamba_path"])
-micromamba_env = config["micromamba_env"]
+#micromamba_path = os.path.expandvars(config["micromamba_path"])
+#micromamba_env = config["micromamba_env"]
 
-shell.prefix(f"source {micromamba_path}; micromamba activate {micromamba_env}; ")
+conda_path = os.path.expandvars(config["conda_path"])
+conda_env = config["conda_env"]
+
+#shell.prefix(f"source {micromamba_path}; micromamba activate {micromamba_env}; ")
 #shell.prefix("source $HOME/micromamba/etc/profile.d/micromamba.sh; micromamba activate varrna; ")
+shell.prefix(f"source {conda_path}; conda activate {conda_env}; ")
 
 include: "rules/setup.smk"
 
