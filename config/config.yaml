@@ -1,6 +1,8 @@
 # If necessary, change environment variables to match your environment setup
-micromamba_path: "$HOME/micromamba/etc/profile.d/micromamba.sh"
-micromamba_env: "varrna"
+#micromamba_path: "$HOME/micromamba/etc/profile.d/micromamba.sh"
+#micromamba_env: "varrna"
+conda_path: "$HOME/miniforge3/etc/profile.d/conda.sh"
+conda_env: "varrna"
 
 # Edit this file to add your own sample paths
 samples: "../config/samples.csv"
@@ -14,18 +16,19 @@ dependencies:
   annovar: "../dependencies/annovar"
   annovar_db: "../dependencies/human_db/"
 
+# ACM: GRCh38.p13 --> CGG used ERCC files
 reference:
-  fasta: "../resources/GRCh38.p13.genome.fa"
-  gtf: "../resources/gencode.v43.primary_assembly.annotation.gtf"
+  fasta: "../resources/GRCh38_primary_assembly_no_alt_decoy_ERCC.fna"
+  gtf: "../resources/gencode.v28.complete.ERCC.annotation.gtf"
   transcriptome: "../resources/gencode.v47.transcripts.fa.gz"
 
-
+# ACM: GRCh38.p13 --> CGG used ERCC files
 annotation_resources:
   dbsnp: "../resources/dbsnp151_common.hg38.vcf.gz"
   exome_bed: "../resources/ref/IDT.Exomev2.targets.GRCh38.sorted.merged.bed"
   rep_mask: "../resources/repmask_hg38.bed"
   rna_edit: "../resources/RNAedit.sorted.vcf.gz"
-  genes_bed: "../resources/gencode.v43.primary_assembly.gene_name.bed.gz"
+  genes_bed: "../resources/gencode.v28.complete.ERCC.gene_name.bed.gz"
 
 models:
   trueartifact: "../resources/xgb/xgb_trueartifact.pkl"
